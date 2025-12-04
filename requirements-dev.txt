@@ -1,0 +1,7 @@
+# Development and testing dependencies
+pytest>=7.0
+hypothesis>=6.0  # For property-based testing
+pytest-cov>=4.0
+black>=22.0
+flake8>=4.0
+mypy>=0.950
