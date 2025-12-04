@@ -1,0 +1,4 @@
+# file: C:\Bug_Bash\25_12_04\v-coralhuang_25_12_04_case2\todo_advanced\__init__.py
+# hypothesis_version: 6.148.6
+
+['add_tag_to_task', 'add_todo', 'complete_task', 'filter_by_tags', 'list_all_tags', 'list_todos', 'remove_tag_from_task', 'show_tag_stats']

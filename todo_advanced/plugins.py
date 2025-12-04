@@ -8,7 +8,7 @@ import pkgutil
 from pathlib import Path
 from typing import Callable, List
 
-PLUGIN_DIR = Path(__file__).parent / 'plugins'
+PLUGIN_DIR = Path(__file__).parent / 'plugin_modules'
 
 _hooks = {
     'on_task_added': [],
