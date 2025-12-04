@@ -1,0 +1,4 @@
+# file: C:\Bug_Bash\25_12_04\2\raptor-secondary\todo_advanced\storage.py
+# hypothesis_version: 6.148.6
+
+[0.4, 0.5, 0.6, 100, ' ORDER BY id ASC', ',', '?', 'SELECT * FROM tasks', 'alias', 'c', 'color', 'completed', 'count', 'created_at', 'description', 'id', 'name', 'other_id', 'tag_id', 'task', 'task_id', 'updated_at', 'usage_count']

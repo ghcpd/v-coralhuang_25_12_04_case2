@@ -1,0 +1,4 @@
+# file: C:\Bug_Bash\25_12_04\2\raptor-secondary\todo_advanced\query.py
+# hypothesis_version: 6.148.6
+
+['(', ')', '1', ':', 'AND', 'NOT', 'OR', 'completed', 'empty query', 'tag', 'task', 'tasks.completed = 0', 'tasks.completed = 1', 'tasks.task LIKE ?', 'text', 'true', 'y', 'yes']

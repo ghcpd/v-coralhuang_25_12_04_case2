@@ -1,0 +1,4 @@
+# file: C:\Bug_Bash\25_12_04\2\raptor-secondary\todo_advanced\config.py
+# hypothesis_version: 6.148.6
+
+[256, 1000, '.lock', 'TODO_DB_DIR', 'TODO_DB_PATH', 'TODO_PLUGINS', 'todo_data.db']
