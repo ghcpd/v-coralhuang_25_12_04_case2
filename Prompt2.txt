@@ -1,0 +1,102 @@
+**New Feature Prompt — Advanced Tag System for TODO Application**
+
+The current `todo_original.py` implements a minimal in-memory TODO list where tags are just plain strings. There is no persistence, no metadata, no advanced filtering, no concurrency protection, and no extensibility.
+This feature introduces a complete, modern Tag System that is persistent, modular, concurrency-safe, and easy to extend—while preserving the existing public API.
+
+---
+
+# **New Feature Requirements**
+
+The upgraded Tag System should provide:
+
+**Persistent Tag & Task Storage**
+
+* Store all tasks, tags, and metadata using either SQLite or JSON with locking
+* Survive restarts and support simple schema evolution
+* Guarantee safe reads/writes under concurrency
+
+**Structured Tag Model**
+
+* Aliases (e.g., “work” ↔ “office”)
+* Colors for CLI display
+* Descriptions
+* Created/updated timestamps
+* Usage counters
+* Tag co-occurrence graph (relationships between tags)
+
+**Tag Recommendations**
+
+* Suggest tags based on keyword similarity
+* Use co-occurrence history and usage frequency
+
+**Query Language (Mini DSL)**
+
+* Expressions like: `tag:work AND (urgent OR personal) AND NOT archived`
+* Support for parentheses, operators, tokenization, parsing, and scoring
+* Extensible operators for future additions
+
+**Concurrency Safety**
+
+* Protect updates from race conditions and corruption
+* Allow safe concurrent creation and modification
+* Support transaction or snapshot-style logic
+
+**Modular Architecture**
+
+* Package structure with separate modules for storage, tags, query engine, plugins, validation, caching, metrics, CLI, etc.
+* Clean internal boundaries and testable components
+
+**Plugin System**
+
+* Auto-discovery of plugin modules
+* Hooks such as `on_task_added` / `on_tag_added` / `on_task_completed`
+* Allow custom query operators or auto-tagging behaviors
+
+**Enhanced CLI**
+
+* Fuzzy search for tasks/tags
+* Colorized output
+* Paging for long results
+* Ability to run DSL queries directly from CLI
+
+**Backward Compatibility**
+
+* Existing API functions must behave exactly as before
+* No breaking changes to callers using `todo_original.py`
+
+---
+
+# **Expected Deliverables**
+
+**Code**
+
+* `todo_advanced.py` (API wrapper)
+* Modular package providing storage, tag logic, query engine, plugin loader, concurrency tools, CLI enhancements, validation & caching layers
+* `todo_original.py` preserved unchanged
+
+**Tests**
+
+* Automated tests for persistence, concurrency behavior, query language, tag metadata, CLI commands, plugin hooks
+* Performance and stress tests (e.g., 10k+ tasks)
+* Property-based tests (Hypothesis) for random queries and simultaneous operations
+* All tests placed under a `tests/` directory
+
+**Supporting Files**
+
+* `README.md` with a simple overview of the new tag features, usage examples, and instructions for one-click testing
+* One-click test script: `run_tests` (`run_tests.sh` + `run_tests.ps1`)
+
+  * Creates/activates environment
+  * Installs dependencies
+  * Runs the full automated test suite
+  * Prints results and performance metrics
+* Reusable environment definition (`requirements.txt` + `requirements-dev.txt`)
+* `FEATURE_SPEC.md`
+* `perf_test.py` for basic performance validation
+
+**Performance Targets**
+
+* Load 10,000 tasks in < 80 ms
+* Typical queries in < 50 ms
+* Tag-relationship updates in < 10 ms
+* No data corruption under concurrent writes
