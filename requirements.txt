@@ -1,0 +1,2 @@
+# Core dependencies
+sqlite3 is built-in
