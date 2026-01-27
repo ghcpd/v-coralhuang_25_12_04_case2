@@ -1,0 +1,4 @@
+# file: C:\Bug_Bash\25_12_04\2\raptor-secondary\todo_advanced\plugins.py
+# hypothesis_version: 6.148.6
+
+[',', 'on_tag_added', 'on_task_added', 'on_task_completed', 'select']
