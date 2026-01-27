@@ -1,0 +1,4 @@
+# file: C:\Bug_Bash\25_12_04\v-coralhuang_25_12_04_case2\todo_advanced\storage.py
+# hypothesis_version: 6.148.6
+
+[',', '?', 'completed', 'created_at', 'id', 'name', 'on_tag_added', 'on_task_added', 'on_task_completed', 'other', 'tags', 'task', 'todo_data.db', 'updated_at', 'usage_count', 'weight']

@@ -1,0 +1,4 @@
+# file: C:\Bug_Bash\25_12_04\v-coralhuang_25_12_04_case2\todo_advanced\plugins.py
+# hypothesis_version: 6.148.6
+
+['.py', 'on_tag_added', 'on_task_added', 'on_task_completed', 'plugin_modules']
